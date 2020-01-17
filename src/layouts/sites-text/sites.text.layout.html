@@ -1,0 +1,3 @@
+<ng-container *ngIf="text$ | async as text">
+  <div [wchEditable]="textAccessor$ | async" [ngStyle]="styles$ | async" [innerHTML]="text"></div>
+</ng-container>

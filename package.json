@@ -30,6 +30,8 @@
   "peerDependencies": {
     "@acoustic-content-sdk/ng-api": "^9",
     "@acoustic-content-sdk/api": "^9",
+    "@acoustic-content-sdk/ng": "^9",
+    "@acoustic-content-sdk/ng-utils": "^9",
     "@angular/common": "next",
     "@angular/core": "next",
     "rxjs": "^6"
@@ -37,7 +39,11 @@
   "devDependencies": {
     "@acoustic-content-sdk/ng-api": "^9",
     "@acoustic-content-sdk/api": "^9",
+    "@acoustic-content-sdk/ng": "^9",
+    "@acoustic-content-sdk/ng-utils": "^9",
     "ng-packagr": "next",
+    "@angular/router": "next",
+    "@angular/platform-browser": "next",
     "@angular/core": "next",
     "@angular/common": "next",
     "@angular/compiler": "next",
@@ -53,7 +59,11 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api"
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/ng": "acoustic-content-sdk.ng",
+        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
+        "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     }
   },
