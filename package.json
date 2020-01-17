@@ -1,6 +1,6 @@
 {
   "name": "@carsten-leue/ivy-module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
   "private": false,
   "keywords": [
@@ -48,8 +48,7 @@
     "typescript": "~3.6"
   },
   "ngPackage": {
-    "lib": {
-    }
+    "lib": {}
   },
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
