@@ -24,7 +24,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "ng-packagr -p package.json -c tsconfig.json"
+    "build": "ng-packagr -p package.json"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -51,7 +51,11 @@
     "access": "public"
   },
   "ngPackage": {
-    "lib": {}
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api"
+      }
+    }
   },
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
