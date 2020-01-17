@@ -2,6 +2,7 @@
   "name": "@carsten-leue/ivy-module",
   "version": "1.0.2",
   "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "private": false,
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -10,18 +11,18 @@
     "sdk"
   ],
   "bugs": {
-    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+    "url": "https://github.com/Carsten-Leue/ivy-module/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+    "url": "https://github.com/Carsten-Leue/ivy-module.git"
   },
   "license": "MIT",
-  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "author": {
+    "name": "Carsten Leue",
+    "email": "carsten.leue+github@gmail.com"
+  },
   "sideEffects": false,
-  "main": "dist/bundles/sites-next-content-basic-building-blocks.umd.js",
-  "module": "dist/fesm5/sites-next-content-basic-building-blocks.js",
-  "typings": "dist/sites-next-content-basic-building-blocks.d.ts",
   "scripts": {
     "build": "ng-packagr -p package.json -c tsconfig.json"
   },
@@ -46,20 +47,8 @@
     "tsickle": "^0.38.0",
     "typescript": "~3.6"
   },
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
-  "es2015": "dist/fesm2015/sites-next-content-basic-building-blocks.js",
-  "esm2015": "dist/esm2015/sites-next-content-basic-building-blocks.js",
-  "esm5": "dist/esm5/sites-next-content-basic-building-blocks.js",
-  "fesm2015": "dist/fesm2015/sites-next-content-basic-building-blocks.js",
-  "fesm5": "dist/fesm5/sites-next-content-basic-building-blocks.js",
-  "metadata": "dist/sites-next-content-basic-building-blocks.metadata.json",
   "ngPackage": {
     "lib": {
-      "umdModuleIds": {
-        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api"
-      }
     }
   },
   "tsdoc": {
