@@ -47,6 +47,9 @@
     "tsickle": "^0.38.0",
     "typescript": "~3.6"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "ngPackage": {
     "lib": {}
   },
