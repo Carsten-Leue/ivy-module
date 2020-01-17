@@ -44,7 +44,7 @@
     "rxjs": "^6",
     "zone.js": "~0.10.2",
     "tsickle": "^0.38.0",
-    "typescript": "^3.7.5"
+    "typescript": "~3.6"
   },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
