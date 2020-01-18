@@ -1,30 +1,14 @@
-import { LayoutComponent } from '@acoustic-content-sdk/ng';
-import {
-  opFilterNotNil,
-  rxPipe,
-  hashRandomIdentifier,
-  NOOP_LOGGER_SERVICE,
-  rxNext
-} from '@acoustic-content-sdk/utils';
-import { transition, trigger, useAnimation } from '@angular/animations';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Optional,
-  Inject
-} from '@angular/core';
-import { Observable, MonoTypeOperatorFunction } from 'rxjs';
-import { map } from 'rxjs/operators';
-import {
-  KEY_BACKGROUND_COLOR,
-  KEY_MARGIN,
-  KEY_PADDING,
-  KEY_WIDTH
-} from './../../elements/sites-rows/sites.rows.type';
-import { getStyles, Styles } from './../../utils/style.utils';
-import { TypeSitesRowsComponent } from './../../components/sites-rows/type.sites.rows.component';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { LoggerService } from '@acoustic-content-sdk/api';
+import { LayoutComponent } from '@acoustic-content-sdk/ng';
+import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { hashRandomIdentifier, NOOP_LOGGER_SERVICE, opFilterNotNil, rxNext, rxPipe } from '@acoustic-content-sdk/utils';
+import { ChangeDetectionStrategy, Component, Inject, Optional } from '@angular/core';
+import { MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { TypeSitesRowsComponent } from './../../components/sites-rows/type.sites.rows.component';
+import { KEY_BACKGROUND_COLOR, KEY_MARGIN, KEY_PADDING, KEY_WIDTH } from './../../elements/sites-rows/sites.rows.type';
+import { getStyles, Styles } from './../../utils/style.utils';
 
 /** Useful imports */
 // import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
