@@ -1,0 +1,6 @@
+<!-- layout type -->
+<h1>SitesHtmlLayoutComponent</h1>
+<!-- register for the context -->
+<ng-container *ngIf="renderingContext$ | async as rc">
+  <div [wchEditable]="htmlAccessor$ | async" [innerHTML]="rc.code" [ngStyle]="styles$ | async"></div>
+</ng-container>

@@ -1,0 +1,15 @@
+<!-- Start sites-page-card-layout -->
+<div class="sites-page-card-container" [ngStyle]="styles$ | async" [attr.data-wch-editable]="accessor$ | async" [wchEditable]="accessor$ | async">
+  <img [attr.data-wch-editable]="imageAccessor$ | async" [wchEditable]="imageAccessor$ | async"
+    class="sites-page-card-image" [src]="imageUrl$ | async">
+  <div class="sites-page-card-content-wrapper">
+    <h1 [attr.data-wch-editable]="headingAccessor$ | async" [wchEditable]="headingAccessor$ | async"
+      class="sites-page-card-heading">{{heading$ | async}}</h1>
+    <p [attr.data-wch-editable]="summaryAccessor$ | async" [wchEditable]="summaryAccessor$ | async"
+      class="sites-page-card-summary">{{summary$ | async}}</p>
+    <p *ngIf="link$ | async as link">
+      <a class="sites-page-card-link" [href]="link.linkURL">{{link.linkText}}</a>
+    </p>
+  </div>
+</div>
+<!-- End sites-page-card-layout -->

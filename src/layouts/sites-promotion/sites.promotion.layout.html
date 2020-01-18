@@ -1,0 +1,12 @@
+<!-- layout type -->
+<ng-container *ngIf="renderingContext$ | async as rc">
+  <div class="promotion-image">
+    <wch-content [ctx]="rc.image"></wch-content>
+  </div>
+  <div class="promotion-text">
+    <wch-content [ctx]="rc.text"></wch-content>
+  </div>
+  <div class="promotion-button">
+    <wch-content [ctx]="rc.button"></wch-content>
+  </div>
+</ng-container>

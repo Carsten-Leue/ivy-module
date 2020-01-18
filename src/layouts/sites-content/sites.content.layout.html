@@ -1,0 +1,10 @@
+<div
+  *ngIf="content$ | async as content"
+  [wchEditable]="accessor$ | async"
+  [attr.data-wch-editable]="accessor$ | async"
+  [wchSelectable]="accessor$ | async"
+  data-draggable="true"
+  data-effectAllowed="copyMove"
+>
+  <wch-content [ctx]="content"></wch-content>
+</div>

@@ -6,42 +6,42 @@ import {
   reduceArray
 } from '@acoustic-content-sdk/utils';
 import {
-  SitesAlignmentType,
+  AlignmentOptionsType,
   KEY_ALIGNMENT_OPTIONS
-} from '../elements/sites-alignment/sites.alignment.type';
+} from '../elements/alignment-options/alignment.options.type';
 import {
-  SitesBackgroundType,
+  BackgroundExtensionType,
   KEY_BACKGROUND_COLOR,
   KEY_IMAGE
-} from '../elements/sites-background/sites.background.type';
+} from '../elements/background-extension/background.extension.type';
 import {
-  SitesBoundaryType,
+  BoundaryOptionsType,
   KEY_BOTTOM,
   KEY_LEFT,
   KEY_RIGHT,
   KEY_TOP
-} from '../elements/sites-boundary/sites.boundary.type';
-import { SitesColorType, KEY_COLOR_CODE } from '../elements/sites-color/sites.color.type';
+} from '../elements/boundary-options/boundary.options.type';
+import { ColorsType, KEY_COLOR_CODE } from '../elements/colors/colors.type';
 import {
   FontOptionsType,
   KEY_FONTS
 } from '../elements/font-options/font.options.type';
 import {
   KEY_LINE_HEIGHT_OPTIONS,
-  SitesLineHeightType
-} from '../elements/sites-line-height/sites.line.height.type';
+  LineHeightOptionsType
+} from '../elements/line-height-options/line.height.options.type';
 import {
   KEY_COLOR,
   KEY_FONT,
   KEY_SIZE,
-  SitesStylingType
-} from '../elements/sites-styling/sites.styling.type';
+  StylingType
+} from '../elements/styling/styling.type';
 import {
   KEY_ALIGNMENT,
   KEY_BACKGROUND,
   KEY_LINE_HEIGHT,
   KEY_TEXT_STYLE
-} from '../elements/sites-text/sites.text.type';
+} from '../elements/text/text.type';
 
 export type Styles = Record<string, string>;
 
@@ -69,7 +69,7 @@ function getCssDimension(aValue: number): string {
  */
 function getFromBoundaryOptions(
   aPrefix: 'padding' | 'margin',
-  aOptions?: SitesBoundaryType
+  aOptions?: BoundaryOptionsType
 ): Styles {
   // result
   const result: Styles = {};
@@ -95,13 +95,13 @@ function getFromBoundaryOptions(
     : result;
 }
 
-function getPaddingFromBoundaryOptions(aOptions?: SitesBoundaryType): Styles {
+function getPaddingFromBoundaryOptions(aOptions?: BoundaryOptionsType): Styles {
   return getFromBoundaryOptions(KEY_PADDING, aOptions);
 }
 
 //function getSpacing(aSpacing: Space)
 
-function getMarginFromBoundaryOptions(aOptions?: SitesBoundaryType): Styles {
+function getMarginFromBoundaryOptions(aOptions?: BoundaryOptionsType): Styles {
   return getFromBoundaryOptions(KEY_MARGIN, aOptions);
 }
 
@@ -113,7 +113,7 @@ function getFont(aFont?: string | FontOptionsType): Styles {
     : EMPTY_STYLES;
 }
 
-function getTextStyle(aTextStyle?: SitesStylingType): Styles {
+function getTextStyle(aTextStyle?: StylingType): Styles {
   return isNotNil(aTextStyle)
     ? {
         'font-family': aTextStyle[KEY_FONT],
@@ -123,16 +123,16 @@ function getTextStyle(aTextStyle?: SitesStylingType): Styles {
     : EMPTY_STYLES;
 }
 
-function getLineHeight(aLineHeight?: SitesLineHeightType) {
+function getLineHeight(aLineHeight?: LineHeightOptionsType) {
   return isNotNil(aLineHeight) && isNotNil(aLineHeight[KEY_LINE_HEIGHT_OPTIONS])
     ? {
-        'line-height': aLineHeight[KEY_LINE_HEIGHT_OPTIONS]
+        'line-height': aLineHeight[KEY_LINE_HEIGHT_OPTIONS].selection
       }
     : EMPTY_STYLES;
 }
 
 function getBackgroundStyle(
-  aBackgroundStyle?: SitesBackgroundType
+  aBackgroundStyle?: BackgroundExtensionType
 ): Styles {
   // TODO: Missing background styles
   const result = {};
@@ -154,7 +154,7 @@ function getBackgroundStyle(
   return result;
 }
 
-function getBackgroundColor(aColor?: string | SitesColorType): Styles {
+function getBackgroundColor(aColor?: string | ColorsType): Styles {
   return isString(aColor)
     ? { 'background-color': aColor }
     : isNotNil(aColor)
@@ -193,21 +193,21 @@ function getAlignStylesFromSelection(aSel?: string): Styles {
   return { 'text-align': aSel };
 }
 
-function getAlignStylesFromOptions(aOptions?: string): Styles {
+function getAlignStylesFromOptions(aOptions?: OptionSelection): Styles {
   return isNotNil(aOptions)
-    ? getAlignStylesFromSelection(aOptions)
+    ? getAlignStylesFromSelection(aOptions.selection)
     : EMPTY_STYLES;
 }
 
-export function getAlignStyles(aAlignment?: SitesAlignmentType): Styles {
+export function getAlignStyles(aAlignment?: AlignmentOptionsType): Styles {
   return isNotNil(aAlignment)
     ? getAlignStylesFromOptions(aAlignment[KEY_ALIGNMENT_OPTIONS])
     : EMPTY_STYLES;
 }
 
-export function getAlign(anAlignment?: SitesAlignmentType): string {
+export function getAlign(anAlignment?: AlignmentOptionsType): string {
   return isNotNil(anAlignment) && isNotNil(anAlignment[KEY_ALIGNMENT_OPTIONS])
-    ? anAlignment[KEY_ALIGNMENT_OPTIONS]
+    ? anAlignment[KEY_ALIGNMENT_OPTIONS].selection
     : '';
 }
 
@@ -218,16 +218,16 @@ export function getAlign(anAlignment?: SitesAlignmentType): string {
  * @returns the styles
  */
 export function getStyles(aElement?: {
-  [KEY_PADDING]?: SitesBoundaryType;
-  [KEY_MARGIN]?: SitesBoundaryType;
-  [KEY_ALIGNMENT]?: SitesAlignmentType;
-  [KEY_TEXT_STYLE]?: SitesStylingType;
-  [KEY_LINE_HEIGHT]?: SitesLineHeightType;
-  [KEY_BACKGROUND]?: SitesBackgroundType;
+  [KEY_PADDING]?: BoundaryOptionsType;
+  [KEY_MARGIN]?: BoundaryOptionsType;
+  [KEY_ALIGNMENT]?: AlignmentOptionsType;
+  [KEY_TEXT_STYLE]?: StylingType;
+  [KEY_LINE_HEIGHT]?: LineHeightOptionsType;
+  [KEY_BACKGROUND]?: BackgroundExtensionType;
   [KEY_WIDTH]?: number;
   [KEY_HEIGHT]?: number;
   [KEY_SIZE]?: number;
-  [KEY_BACKGROUND_COLOR]?: string | SitesColorType;
+  [KEY_BACKGROUND_COLOR]?: string | ColorsType;
 }): Styles {
   return isNotNil(aElement)
     ? {

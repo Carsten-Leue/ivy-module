@@ -1,0 +1,12 @@
+<div style="border: 1px solid red">
+<div
+  *ngIf="renderingContext$ | async as rc"
+  class="container-fluid sites-rows-layout-component"
+  title="Rows: {{rc.rows.length}}"
+  [ngStyle]="styles$ | async"
+>
+  <div *ngFor="let row of rc.rows; trackBy: trackCtx" [@zoomIn]="row.key" class="sites-rows-layout-component">
+    <wch-content [attr.data-key]="row.key" [ctx]="row"></wch-content>
+  </div>
+</div>
+</div>

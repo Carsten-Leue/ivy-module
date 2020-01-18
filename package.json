@@ -34,6 +34,7 @@
     "@acoustic-content-sdk/ng-utils": "^9",
     "@angular/common": "next",
     "@angular/core": "next",
+    "@angular/animations": "next",
     "rxjs": "^6"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "@acoustic-content-sdk/ng": "^9",
     "@acoustic-content-sdk/ng-utils": "^9",
     "ng-packagr": "next",
+    "@angular/animations": "next",
     "@angular/router": "next",
     "@angular/platform-browser": "next",
     "@angular/core": "next",

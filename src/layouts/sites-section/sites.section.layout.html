@@ -1,0 +1,11 @@
+<div
+  *ngIf="cells$ | async as cells"
+  class="row no-gutter sites-section"
+  [ngStyle]="styles$ | async"
+>
+  <wch-content
+    *ngFor="let cell of cells; trackBy: trackCtx"
+    [class]="colClass(cells)"
+    [ctx]="cell"
+  ></wch-content>
+</div>

@@ -1,0 +1,16 @@
+<div
+  *ngIf="content$ | async as content"
+  class="cell-content"
+  [ngStyle]="styles$ | async"
+  [wchEditable]="accessor$ | async"
+  data-drop-target="true"
+>
+  <wch-content
+    *ngFor="let contentItem of content; trackBy: trackCtx"
+    [ctx]="contentItem"
+  ></wch-content>
+
+  <div #dndPlaceholder class="dndPlaceholder"></div>
+
+</div>
+

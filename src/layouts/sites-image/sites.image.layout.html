@@ -1,0 +1,4 @@
+<!-- layout type -->
+<ng-container *ngIf="imageUrl$ | async as imageUrl">
+  <img [wchEditable]="imageAccessor$ | async" [src]="imageUrl" [ngStyle]="styles$ | async">
+</ng-container>
