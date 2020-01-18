@@ -1,6 +1,6 @@
 {
   "name": "@carsten-leue/ivy-module",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
   "private": false,
   "keywords": [
