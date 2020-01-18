@@ -24,7 +24,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "ng-packagr -p package.json"
+    "build": "ng-packagr -p package.json -c tsconfig.lib.json"
   },
   "dependencies": {},
   "peerDependencies": {
