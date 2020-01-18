@@ -35,6 +35,7 @@
     "@angular/common": "next",
     "@angular/core": "next",
     "@angular/animations": "next",
+    "ng-animate": "^0.3.4",
     "rxjs": "^6"
   },
   "devDependencies": {
@@ -50,6 +51,7 @@
     "@angular/common": "next",
     "@angular/compiler": "next",
     "@angular/compiler-cli": "next",
+    "ng-animate": "^0.3.4",
     "rxjs": "^6",
     "zone.js": "~0.10.2",
     "tsickle": "^0.38.0",
