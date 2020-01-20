@@ -54,7 +54,7 @@
     "ng-animate": "^0.3.4",
     "rxjs": "^6",
     "zone.js": "~0.10.2",
-    "tsickle": "^0.38.0",
+    "tsickle": "~0.37.0",
     "typescript": "~3.6"
   },
   "publishConfig": {
